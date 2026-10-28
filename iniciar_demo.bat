@@ -1,0 +1,6 @@
+@echo off
+echo Instalando dependencias (solo la primera vez tarda)...
+pip install -r requirements.txt
+echo Abriendo la demo en el navegador...
+streamlit run app/demo_app.py
+pause
