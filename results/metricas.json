@@ -1,0 +1,242 @@
+{
+  "limpieza": {
+    "filas": 5000,
+    "columnas": 25,
+    "nulos": 0,
+    "duplicados_exactos": 0,
+    "ids_duplicados": 0,
+    "tiempos_no_positivos": 0,
+    "margen_inconsistente": 0,
+    "porcentaje_inconsistente": 0,
+    "riesgo_inconsistente": 0,
+    "atipicos_1_5_iqr": 113,
+    "atipicos_3_iqr": 12,
+    "umbral_3_iqr": 4.93,
+    "vencidos_entre_atipicos_3_iqr": 12,
+    "filas_finales": 5000
+  },
+  "particion": {
+    "train": 3500,
+    "val": 750,
+    "test": 750
+  },
+  "objetivo": {
+    "count": 5000.0,
+    "mean": 1.9165400000000001,
+    "std": 0.7166112856681435,
+    "min": 0.15,
+    "25%": 1.45,
+    "50%": 1.88,
+    "75%": 2.32,
+    "max": 6.0
+  },
+  "riesgo_real_global": {
+    "Vencido": 2038,
+    "Medio": 1309,
+    "Bajo": 945,
+    "Alto": 708
+  },
+  "hiperparametros": {
+    "Ridge": {
+      "mejores": {
+        "alpha": 45.7056
+      },
+      "rmse_cv": 0.5255617922292671,
+      "combinaciones": 20
+    },
+    "RandomForest": {
+      "mejores": {
+        "n_estimators": 600,
+        "min_samples_leaf": 10,
+        "max_features": 0.6,
+        "max_depth": 12
+      },
+      "rmse_cv": 0.5466114363491523,
+      "combinaciones": 25
+    },
+    "XGBoost": {
+      "mejores": {
+        "colsample_bytree": 0.7871,
+        "learning_rate": 0.059,
+        "max_depth": 1,
+        "min_child_weight": 5,
+        "n_estimators": 808,
+        "reg_lambda": 2.6117,
+        "subsample": 0.9074
+      },
+      "rmse_cv": 0.5275558259501444,
+      "combinaciones": 40
+    }
+  },
+  "evaluacion_final": {
+    "mejor_modelo": "M2 · Ridge (ajustado)",
+    "test_mejor": {
+      "MAE": 0.3514630717541307,
+      "RMSE": 0.49197085775104055,
+      "R2": 0.5452690717147394
+    },
+    "test_baseline": {
+      "MAE": 0.35232803419283,
+      "RMSE": 0.4920200902758492,
+      "R2": 0.5451780554622957
+    },
+    "test_dummy": {
+      "MAE": 0.5608604952380951,
+      "RMSE": 0.7295866491927275,
+      "R2": -6.791547124396224e-05
+    },
+    "train_mejor": {
+      "MAE": 0.3569754218632919,
+      "RMSE": 0.5179399333172493,
+      "R2": 0.47032146525186014
+    },
+    "mejora_rmse_vs_baseline_pct": 0.01000620214126613,
+    "mejora_rmse_vs_dummy_pct": 32.56854983634966,
+    "test_todos": {
+      "M0 · Dummy (media)": {
+        "MAE": 0.5608604952380951,
+        "RMSE": 0.7295866491927275,
+        "R2": -6.791547124396224e-05
+      },
+      "M1 · Regresión lineal (baseline)": {
+        "MAE": 0.35232803419283,
+        "RMSE": 0.4920200902758492,
+        "R2": 0.5451780554622957
+      },
+      "M2 · Ridge (ajustado)": {
+        "MAE": 0.3514630717541307,
+        "RMSE": 0.49197085775104055,
+        "R2": 0.5452690717147394
+      },
+      "M3a · Random Forest (por defecto)": {
+        "MAE": 0.3947262933333335,
+        "RMSE": 0.5391222643098756,
+        "R2": 0.45392754202744034
+      },
+      "M3b · Random Forest (ajustado)": {
+        "MAE": 0.372286589747986,
+        "RMSE": 0.5183588611695705,
+        "R2": 0.49517972152575274
+      },
+      "M4 · XGBoost (ajustado)": {
+        "MAE": 0.3532328013928731,
+        "RMSE": 0.49304202829202776,
+        "R2": 0.5432867402686894
+      }
+    },
+    "mae_por_plazo": {
+      "1 dia(s)": {
+        "n": 175,
+        "MAE_dias": 0.34940018088112085,
+        "MAE_horas": 8.3856043411469
+      },
+      "2 dia(s)": {
+        "n": 332,
+        "MAE_dias": 0.3634138828096894,
+        "MAE_horas": 8.721933187432546
+      },
+      "3 dia(s)": {
+        "n": 243,
+        "MAE_dias": 0.3366208356731892,
+        "MAE_horas": 8.07890005615654
+      }
+    }
+  },
+  "auc_vencimiento": {
+    "val": 0.9113010068892422,
+    "test": 0.9219009025603242
+  },
+  "alertas": {
+    "Regla estándar (razón > 1,00)": {
+      "umbral": 1.0001,
+      "alertas": 325,
+      "vencidas_reales": 305,
+      "detectadas": 257,
+      "no_detectadas": 48,
+      "recall": 0.8426229508196721,
+      "precision": 0.7907692307692308,
+      "f1": 0.8158730158730159
+    },
+    "Regla conservadora (razón ≥ 0.95)": {
+      "umbral": 0.95,
+      "alertas": 357,
+      "vencidas_reales": 305,
+      "detectadas": 269,
+      "no_detectadas": 36,
+      "recall": 0.8819672131147541,
+      "precision": 0.7535014005602241,
+      "f1": 0.8126888217522659
+    }
+  },
+  "umbral_conservador": 0.95,
+  "riesgo_4_niveles": {
+    "matriz": [
+      [
+        72,
+        57,
+        8,
+        5
+      ],
+      [
+        20,
+        109,
+        44,
+        24
+      ],
+      [
+        1,
+        38,
+        28,
+        39
+      ],
+      [
+        2,
+        14,
+        32,
+        257
+      ]
+    ],
+    "exactitud": 0.6213333333333333,
+    "exactitud_dummy_mayoritaria": 0.4066666666666667
+  },
+  "alerta_todos": {
+    "umbral": 1.0,
+    "alertas": 750,
+    "vencidas_reales": 305,
+    "detectadas": 305,
+    "no_detectadas": 0,
+    "recall": 1.0,
+    "precision": 0.4066666666666667,
+    "f1": 0.5781990521327014
+  },
+  "clasificador_directo": {
+    "auc_test": 0.9213188432492173,
+    "umbral_prob": 0.39,
+    "recall": 0.8721311475409836,
+    "precision": 0.7578347578347578,
+    "f1": 0.8109756097560976,
+    "alertas": 351,
+    "detectadas": 266
+  },
+  "importancia": {
+    "carga_ord": 0.1232,
+    "complejidad_ord": 0.0933,
+    "urgencia_ord": 0.0516,
+    "numero_adjuntos": 0.0267,
+    "solicitudes_previas": 0.0179,
+    "hecho_principal": 0.0174,
+    "negacion_previa_si": 0.013,
+    "zona": 0.0091,
+    "complejidad_x_carga": 0.0026,
+    "tipo_entidad_accionada": 0.0023,
+    "sujeto_especial": 0.0017,
+    "mes": 0.0007,
+    "dia_semana": 0.0005,
+    "grupo_diagnostico": 0.0003,
+    "departamento": 0.0003,
+    "diagnostico_si": 0.0002,
+    "plazo_informe_dias": 0.0001,
+    "es_fin_semana": -0.0001,
+    "grupo_edad": -0.0002
+  }
+}

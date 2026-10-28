@@ -1,0 +1,9 @@
+id_tutela,hecho_principal,nivel_urgencia,plazo_informe_dias,tiempo_predicho,tiempo_respuesta_dias,riesgo_predicho,nivel_riesgo_real
+TUT-03443,Demora o negacion explicita,Baja,3,2.56,2.29,Alto,Medio
+TUT-02751,Cita con especialista,Baja,3,2.33,2.44,Medio,Medio
+TUT-02102,Insumo medico,Critica,1,1.91,1.97,Vencido,Vencido
+TUT-02163,Hospitalizacion,Media,3,3.06,2.8,Vencido,Alto
+TUT-01936,Medicamento,Alta,2,1.76,1.03,Alto,Bajo
+TUT-02316,Cirugia,Critica,1,2.54,1.58,Vencido,Vencido
+TUT-04920,Terapia de rehabilitacion,Baja,3,2.03,2.33,Medio,Medio
+TUT-04911,Transporte o viaticos,Media,3,1.1,1.55,Bajo,Bajo
